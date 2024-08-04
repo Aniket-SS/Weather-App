@@ -1,0 +1,21 @@
+<%- include("partials/header.ejs") %>
+
+<div class="container">
+
+    <div class="input">
+        <div class="form">
+            <form action="/weather" method="post">
+                <label for="city">Enter a City Name</label>
+                <input type="text" name="city" id="text" placeholder="Eg. Norway, London">
+                <input type="submit" value="Search">
+                
+            </form>
+        </div>
+    </div>
+
+    <% if(locals.error) { %>
+        <div>
+            <p class="error"><%= error %></p>
+        </div>
+    <% } %>
+

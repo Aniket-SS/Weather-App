@@ -1,0 +1,71 @@
+
+<%- include("index.ejs") %>
+
+    <div class="output">
+
+        <div class="display">
+            
+                <h2><%= capitalizeFirstLetter(city) %>, <%= info.sys.country %></h2>
+                <p><%= roundToInteger(info.main.temp) %> &deg;C</p>
+            
+                <ul>
+                    <li>Wind: <%= info.wind.speed %> m/s</li>
+                    <li>Humidity: <%= info.main.humidity %> %</li>
+                    <li>Min-temp: <%= info.main.temp_min %> &deg;C</li>
+                    <li>Max-temp: <%= info.main.temp_max %> &deg;C</li>
+                </ul>
+
+                <div class="display-image">
+                    <img src="images/<%= info.weather[0].icon %>.png" alt="Weather-image">
+                    <h3><%= capitalizeFirstLetter(info.weather[0].description) %> </h3>
+                </div>
+        </div>
+        
+        <h2 class="forecast-title">4-Day Forecast</h2>
+        <div class="forecast">
+
+            <div class="card">
+                <p class="date"><%= date.day+1 %>-<%= date.month %>-<%= date.year %></p>
+                <img src="images/<%= info1.list[0].weather[0].icon %>.png" alt="Day-1 image">
+                <ul>
+                    <li>Temp: <%= info1.list[0].main.temp %> &deg;C</li>
+                    <li>Wind: <%= info1.list[0].wind.speed %> m/s</li>
+                    <li>Humidity: <%= info1.list[0].main.humidity %> %</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <p class="date"><%= date.day+2 %>-<%= date.month %>-<%= date.year %></p>
+                <img src="images/<%= info1.list[8].weather[0].icon %>.png" alt="Day-2 image">
+                <ul>
+                    <li>Temp: <%= info1.list[8].main.temp %> &deg;C</li>
+                    <li>Wind: <%= info1.list[8].wind.speed %> m/s</li>
+                    <li>Humidity: <%= info1.list[8].main.humidity %> %</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <p class="date"><%= date.day+3 %>-<%= date.month %>-<%= date.year %></p>
+                <img src="images/<%= info1.list[16].weather[0].icon %>.png" alt="Day-3 image">
+                <ul>
+                    <li>Temp: <%= info1.list[16].main.temp %> &deg;C</li>
+                    <li>Wind: <%= info1.list[16].wind.speed %> m/s</li>
+                    <li>Humidity: <%= info1.list[16].main.humidity %> %</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <p class="date"><%= date.day+4 %>-<%= date.month %>-<%= date.year %></p>
+                <img src="images/<%= info1.list[24].weather[0].icon %>.png" alt="Day-4 image">
+                <ul>
+                    <li>Temp: <%= info1.list[24].main.temp %> &deg;C</li>
+                    <li>Wind: <%= info1.list[24].wind.speed %> m/s</li>
+                    <li>Humidity: <%= info1.list[24].main.humidity %> %</li>
+                </ul>
+            </div>
+
+        </div>
+
+</div>
+
+<%- include("partials/footer.ejs") %>
