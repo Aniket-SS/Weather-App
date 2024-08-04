@@ -11,8 +11,7 @@ const API_Key = "9d3ccd765765f4c99cb57588cfd60b1d";
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
 
-app.set('views', path.join(__dirname, '../views')); 
-app.set('view engine', 'ejs');
+
 
 app.get("/", (req, res) => {
     res.render("index.ejs");
@@ -64,4 +63,4 @@ app.listen(port, () => {
     console.log(`Server running on port number ${port}.`);
 });
 
-module.exports.handler = serverless(app);
+
