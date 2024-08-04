@@ -6,7 +6,8 @@
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "netlify deploy --prod"
+    "build": "echo 'No build step needed'", 
+    "start": "node functions/index.js"  
   },
   "keywords": [],
   "author": "",
