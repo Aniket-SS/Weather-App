@@ -1,6 +1,7 @@
 import express from "express";
 import bodyParser from "body-parser";
 import axios from "axios";
+import serverless from "serverless-http";
 
 const app = express();
 const port = 3000;
@@ -58,3 +59,5 @@ app.post("/weather", async(req, res) => {
 app.listen(port, () => {
     console.log(`Server running on port number ${port}.`);
 });
+
+module.exports.handler = serverless(app);
