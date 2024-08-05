@@ -9,8 +9,6 @@ const API_Key = "9d3ccd765765f4c99cb57588cfd60b1d";
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
 
-
-
 app.get("/", (req, res) => {
     res.render("index.ejs");
 });
