@@ -2,15 +2,21 @@ import express from "express";
 import bodyParser from "body-parser";
 import axios from "axios";
 import ejs from "ejs";
+import path from "path";
+import { fileURLToPath } from 'url';
 
 const app = express();
 const port = 3000;
 const API_Key = "9d3ccd765765f4c99cb57588cfd60b1d";
 
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
 app.set('view engine', 'ejs');
-app.set('views', './views');
+app.set('views', path.join(__dirname, 'views')); 
+
 app.use(bodyParser.urlencoded({extended: true}));
-app.use(express.static("public"));
+app.use(express.static(path.join(__dirname, 'public')));
 
 app.get("/", (req, res) => {
     res.render("index.ejs");
